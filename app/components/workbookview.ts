@@ -16,6 +16,14 @@ import { Note } from './../entities/Note';
                   </div> 
                 </div>   
                 <div class="col-md-3 note-container">
+                  <div class="row note-buttons">
+                    <button type="button" class="btn btn-default">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true" aria-label="Add Note"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                      <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" aria-label="Delete Note"></span>
+                    </button>
+                  </div>
                   <div *ngIf="selectedBook">
                     <div *ngFor="let note of selectedBook.notes" (click)="onSelectNote(note)">
                       <div class="note-summary">
@@ -27,10 +35,10 @@ import { Note } from './../entities/Note';
                 </div>
                 <div class="col-md-7">
                   <div *ngIf="selectedNote">
-                    <div class="note-detail">
-                      <h4>{{ selectedNote.title }}</h4>
-                      <p>{{ selectedNote.tags }}</p>
-                      <p>{{ selectedNote.content }}</p>
+                    <div class="note-detail form-group">
+                      <input [(ngModel)]="selectedNote.title" class="form-control" placeholder="Title">
+                      <input [(ngModel)]="selectedNote.tags" class="form-control" placeholder="Tags">
+                      <textarea [(ngModel)]="selectedNote.content" class="form-control"></textarea>
                     </div>
                   </div>
                 </div>

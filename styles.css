@@ -35,3 +35,14 @@ body {
   background-color: #bbbcbf;
   color: white;
 }
+.note-detail {
+  border: 1px solid #f4f5f7;
+  padding: 2px;
+  height: 100%;
+}
+.note-detail textarea {
+  height: 80%;
+}
+.note-buttons {
+  margin: 1px;
+}
