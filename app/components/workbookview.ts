@@ -16,13 +16,24 @@ import { Note } from './../entities/Note';
                   </div> 
                 </div>   
                 <div class="col-md-3 note-container">
-                  <div class="row note-buttons">
-                    <button type="button" class="btn btn-default">
-                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true" aria-label="Add Note"></span>
-                    </button>
-                    <button type="button" class="btn btn-default">
-                      <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" aria-label="Delete Note"></span>
-                    </button>
+                  <div class="note-buttons">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true" aria-label="Add Note"></span>
+                        </button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" aria-label="Delete Note"></span>
+                        </button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" aria-label="Save"></span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <div *ngIf="selectedBook">
                     <div *ngFor="let note of selectedBook.notes" (click)="onSelectNote(note)">
@@ -38,6 +49,45 @@ import { Note } from './../entities/Note';
                     <div class="note-detail form-group">
                       <input [(ngModel)]="selectedNote.title" class="form-control" placeholder="Title">
                       <input [(ngModel)]="selectedNote.tags" class="form-control" placeholder="Tags">
+                      <div class="note-buttons">
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-text-color" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-text-background" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-bold" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-italic" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                       <textarea [(ngModel)]="selectedNote.content" class="form-control"></textarea>
                     </div>
                   </div>

@@ -40,7 +40,12 @@ body {
   padding: 2px;
   height: 100%;
 }
+.note-detail input {
+  border-radius: 0px;
+  margin-bottom: 2px;
+}
 .note-detail textarea {
+  border-radius: 0px;
   height: 80%;
 }
 .note-buttons {
