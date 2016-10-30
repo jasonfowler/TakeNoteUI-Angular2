@@ -9,7 +9,26 @@ import { Note } from './../entities/Note';
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-2 workbook-container">
-                  <div *ngFor="let book of books" [class.selected]="book === selectedBook" (click)="onSelectBook(book)">
+                  <div class="note-buttons-workbook">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngFor="let book of books" [class.selectedBook]="book === selectedBook" (click)="onSelectBook(book)">
                     <div class="workbook-summary">
                       <h4>{{ book.name }}</h4>
                     </div>
@@ -36,7 +55,7 @@ import { Note } from './../entities/Note';
                     </div>
                   </div>
                   <div *ngIf="selectedBook">
-                    <div *ngFor="let note of selectedBook.notes" (click)="onSelectNote(note)">
+                    <div *ngFor="let note of selectedBook.notes" [class.selectedNote]="note === selectedNote" (click)="onSelectNote(note)">
                       <div class="note-summary">
                         <h4>{{ note.title }}</h4>
                         <p>{{ note.content.substr(0, 150) }}</p>
@@ -49,7 +68,7 @@ import { Note } from './../entities/Note';
                     <div class="note-detail form-group">
                       <input [(ngModel)]="selectedNote.title" class="form-control" placeholder="Title">
                       <input [(ngModel)]="selectedNote.tags" class="form-control" placeholder="Tags">
-                      <div class="note-buttons">
+                      <div class="note-buttons-detail">
                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                           <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">
